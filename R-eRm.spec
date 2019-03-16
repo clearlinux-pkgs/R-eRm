@@ -4,13 +4,13 @@
 #
 Name     : R-eRm
 Version  : 0.16.2
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/eRm_0.16-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/eRm_0.16-2.tar.gz
 Summary  : Extended Rasch Modeling
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-eRm-lib
+Requires: R-eRm-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538573540
+export SOURCE_DATE_EPOCH=1552754639
 
 %install
+export SOURCE_DATE_EPOCH=1552754639
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538573540
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library eRm|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  eRm || :
 
 
 %files
@@ -110,10 +109,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/eRm/help/paths.rds
 /usr/lib64/R/library/eRm/html/00Index.html
 /usr/lib64/R/library/eRm/html/R.css
-/usr/lib64/R/library/eRm/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/eRm/libs/eRm.so
-/usr/lib64/R/library/eRm/libs/eRm.so.avx2
 /usr/lib64/R/library/eRm/libs/eRm.so.avx512
