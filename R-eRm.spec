@@ -4,7 +4,7 @@
 #
 Name     : R-eRm
 Version  : 1.0.1
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/eRm_1.0-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/eRm_1.0-1.tar.gz
 Summary  : Extended Rasch Modeling
@@ -30,21 +30,22 @@ lib components for the R-eRm package.
 
 %prep
 %setup -q -c -n eRm
+cd %{_builddir}/eRm
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583274312
+export SOURCE_DATE_EPOCH=1589577178
 
 %install
-export SOURCE_DATE_EPOCH=1583274312
+export SOURCE_DATE_EPOCH=1589577178
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
