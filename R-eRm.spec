@@ -5,7 +5,7 @@
 #
 Name     : R-eRm
 Version  : 1.0.4
-Release  : 43
+Release  : 44
 URL      : https://cran.r-project.org/src/contrib/eRm_1.0-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/eRm_1.0-4.tar.gz
 Summary  : Extended Rasch Modeling
